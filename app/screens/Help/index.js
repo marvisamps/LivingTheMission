@@ -3,11 +3,11 @@ import {View, Text} from 'react-native';
 
 import styles from './styles';
 
-export default class FaqScreen extends React.Component {
+export default class HelpScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Faq!</Text>
+        <Text>Help!</Text>
       </View>
     );
   }

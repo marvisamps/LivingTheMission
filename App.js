@@ -4,13 +4,29 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import RankingScreen from './app/screens/Ranking';
 import ProfileScreen from './app/screens/Profile';
-import FaqScreen from './app/screens/Faq';
+import HelpScreen from './app/screens/Help';
 
-const TabNavigator = createBottomTabNavigator({
-  Profile: ProfileScreen,
-  Ranking: RankingScreen,
-  Faq: FaqScreen,
-});
+import TabIconComponent from './app/components/TabIconComponent';
+
+const TabNavigator = createBottomTabNavigator(
+  {
+    Profile: ProfileScreen,
+    Ranking: RankingScreen,
+    Help: HelpScreen,
+  },
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarIcon: ({focused, horizontal, tintColor}) => {
+        const {routeName} = navigation.state;
+        return <TabIconComponent name={routeName} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'black',
+      inactiveTintColor: 'gray',
+    },
+  },
+);
 
 const AppContainer = createAppContainer(TabNavigator);
 
