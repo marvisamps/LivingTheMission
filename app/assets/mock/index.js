@@ -6,22 +6,22 @@ export const rankingData = {
   people: [
     {
       position: 1,
-      person: 'Rollo',
+      person: 'Rafael Rollo',
       totalPoints: 47,
     },
     {
       position: 2,
-      person: 'Mario',
+      person: 'Mário Vieira',
       totalPoints: 26,
     },
     {
       position: 3,
-      person: 'Bjorn',
+      person: 'Bjorn Borg',
       totalPoints: 25,
     },
     {
       position: 4,
-      person: 'Léo',
+      person: 'Léo Bertonceli',
       totalPoints: 14,
     },
   ],

@@ -37,7 +37,7 @@ const Row = ({children, style}) => {
 
 const Header = ({userInfo}) => {
   return (
-    <View style={{width: '100%', paddingVertical: 24, paddingHorizontal: 30}}>
+    <View style={{paddingVertical: 24, paddingHorizontal: 30}}>
       <Row style={{marginBottom: 12}}>
         <Image
           style={{width: 56, height: 56, borderRadius: 28}}
@@ -100,16 +100,6 @@ export default class ProfileScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <Header userInfo={userInformation} />
-
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            jutifyContent: 'space-between',
-          }}>
-          <Text>Ranking Geral</Text>
-          <Text>Atualizado há 15 minutos</Text>
-        </View>
         <Ranking data={rankingData.people} />
       </SafeAreaView>
     );
