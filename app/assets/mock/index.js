@@ -6,23 +6,28 @@ export const rankingData = {
   people: [
     {
       position: 1,
-      person: 'Rafael Rollo',
-      totalPoints: 47,
+      person: 'Bruno Paulino',
+      totalPoints: 123,
     },
     {
       position: 2,
-      person: 'Mário Vieira',
-      totalPoints: 26,
+      person: 'Renato Batista',
+      totalPoints: 118,
     },
     {
       position: 3,
-      person: 'Bjorn Borg',
-      totalPoints: 25,
+      person: 'Rodolpho Santos',
+      totalPoints: 110,
     },
     {
       position: 4,
-      person: 'Léo Bertonceli',
-      totalPoints: 14,
+      person: 'Tatiane Guedes',
+      totalPoints: 108,
+    },
+    {
+      position: 5,
+      person: 'Patrick Goia',
+      totalPoints: 103,
     },
   ],
 };
