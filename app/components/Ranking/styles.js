@@ -10,8 +10,10 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   titleRating: {
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
+    fontWeight: '800',
+    fontSize: 14, 
+    lineHeight: 20, 
+    textTransform: "uppercase",
   },
   flatList: {
     width,

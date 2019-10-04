@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, SafeAreaView, Text, Image, Dimensions} from 'react-native';
+import {View, SafeAreaView, Text, Image, Dimensions, ScrollView} from 'react-native';
 import * as Progress from 'react-native-progress';
 
 import Ranking from '../../components/Ranking';
@@ -42,8 +42,6 @@ const Header = ({userInfo}) => {
         <Image
           style={{width: 56, height: 56, borderRadius: 28}}
           source={{uri: 'https://randomuser.me/api/portraits/women/36.jpg'}}
-          onError={() => console.warn('DEU RUIM')}
-          onLoadEnd={() => console.warn('LOADED')}
         />
 
         <View
@@ -95,12 +93,56 @@ const Header = ({userInfo}) => {
   );
 };
 
+const PerformanceCard = () => {
+  return (
+    <View style={{ 
+      marginRight: 20,
+      marginVertical: 20,
+      width: 232, 
+      height: 232, 
+      borderRadius: 8, 
+      backgroundColor: 'white', 
+      shadowOpacity: 0.3,
+      shadowRadius: 1,
+      shadowColor: 'grey',
+      shadowOffset: {
+        height: 2,
+        width: 0,
+      },
+      elevation: 5,
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <Text style={{ fontSize: 64, fontWeight: 'bold' }}>42</Text>
+    </View>
+  );
+}
+
+const PerformanceContainer = () => {
+  return (
+    <View style={{width: '100%'}}>
+      <View style={{paddingTop: 24, paddingHorizontal: 30}}>
+        <Text style={{fontWeight: '800', fontSize: 14, lineHeight: 20, textTransform: "uppercase"}}>Seu desempenho</Text>
+      </View>
+
+      <ScrollView horizontal style={{flexDirection: 'row', paddingHorizontal: 30}}>
+        <PerformanceCard />
+        <PerformanceCard />
+        <PerformanceCard />
+      </ScrollView>
+    </View>
+  );
+};
+
 export default class ProfileScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Header userInfo={userInformation} />
-        <Ranking data={rankingData.people} />
+        <ScrollView>
+          <Header userInfo={userInformation} />
+          <Ranking data={rankingData.people} maxVisibleItems={3}/>
+          <PerformanceContainer />
+        </ScrollView>
       </SafeAreaView>
     );
   }
